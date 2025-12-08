@@ -1,8 +1,9 @@
 from jattmail import JattMail
 
 def main() -> int:
-    smtp = JattMail(5, "127.0.0.1")
+    smtp = JattMail()
     smtp.run()
+    return 0
 
 if __name__ == "__main__":
     exit(main())
