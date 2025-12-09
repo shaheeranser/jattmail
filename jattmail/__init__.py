@@ -18,14 +18,14 @@ class JattMail:
         return False
 
     def run(self):
-        self.logger.customLog("----- Server started -----\n")
+        self.logger.customLog("----- Server started -----")
         while True:
             connection, address = self.server.accept()
             data = connection.recv(255)
 
             # Checking for BREAK command
             if data.decode() == BREAK:
-                self.logger.customLog("----- Server stopped -----\n")
+                self.logger.customLog("----- Server stopped -----")
                 self.logger.close()
                 break
 

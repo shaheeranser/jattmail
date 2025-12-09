@@ -9,14 +9,14 @@ class Logs:
     def new(self, address:tuple[str, int], data:bytes|str):
         log = f"{address[0], address[1]} - {datetime.now()} - {data}\n"
         if LOG_ECHO:
-            stdout(log) # type:ignore
+            stdout.write(log)
         if LOG_WRITE:
             self.logfile.write(log)
 
     def customLog(self, log:str):
-        log = f"{datetime.now()} - data\n"
+        log = f"{datetime.now()} - {log}\n"
         if LOG_ECHO:
-            stdout(log) # type:ignore
+            stdout.write(log)
         if LOG_WRITE:
             self.logfile.write(log)
         
